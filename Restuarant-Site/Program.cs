@@ -5,6 +5,7 @@ using Restuarant_Site.Models;
 using Restuarant_Site.Services;
 using Restuarant_Site.Data;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +13,18 @@ builder.Services.AddDbContext<BookingContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ICrudRepository<Booking, int>, BookingRepository>();
 builder.Services.AddScoped<ICrudService<Booking, int>, BookingService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -28,6 +41,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+app.UseCors(MyAllowSpecificOrigins);//To EnableCors - CrossOrigin
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
