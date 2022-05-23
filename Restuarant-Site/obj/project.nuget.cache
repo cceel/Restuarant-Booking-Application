@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "khBydihJITKh4dnt5Mgk4DkUMD+MrVs6Ro/58iCzkj1KJxl/8crQ8G33yYYq4/S7m/R9W3+H1TBmWCxZT1mjmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ryan.rasi\\source\\repos\\Training\\Individual Project\\Restuarant-Booking-Application\\Restuarant-Site\\Restuarant-Site.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ryan.rasi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\ryan.rasi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ryan.rasi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\ryan.rasi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\ryan.rasi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\ryan.rasi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
