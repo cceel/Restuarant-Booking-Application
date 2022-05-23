@@ -26,7 +26,7 @@
         <form action="javascript:addNewBooking()" style="margin-top: 10px">
 
             <label for="chooseLocation">Choose a location:</label><br>
-            <select name="locations" id="locations">
+            <select name="locations" id="locations" oninput="validateInputs()">
                 <option value="terrace">Terrace</option>
                 <option value="balcony">Balcony</option>
                 <option value="indoor_table">Indoors (Table)</option>
@@ -34,23 +34,24 @@
             </select><br><br>
 
             <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname" value="John"><br><br>
+            <input type="text" id="fname" name="fname" value="John" oninput="validateInputs()"><br><br>
 
             <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="text" id="lname" name="lname" value="Doe" oninput="validateInputs()"><br><br>
 
             <label for="phone">Phone Number:</label><br>
-            <input type="text" id="phonen" name="phonen" value=""><br><br>
+            <input type="text" id="phonen" name="phonen" value="" oninput="validateInputs()"><br><br>
 
             <label for="partynum">Number in party:</label><br>
-            <input type="number" id="party" name="party" value="1"><br><br>
+            <input type="number" id="party" name="party" value="1" oninput="validateInputs()"><br><br>
 
             <label for="notes">Special notes:</label><br>
-            <input type="text" id="notes" name="notes" value=""><br><br>
+            <input type="text" id="notes" name="notes" value="" oninput="validateInputs()"><br><br>
 
             <label for="info">Allergy/Dietary Requirements:</label><br>
-            <input type="text" id="info" name="info" value=""><br><br>
-            <input type="submit" value="Submit">
+            <input type="text" id="info" name="info" value="" oninput="validateInputs()"><br><br>
+
+            <input id="submitButton" type="submit" value="Submit">
         </form>
 
     </div>

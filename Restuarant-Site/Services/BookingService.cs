@@ -30,7 +30,13 @@ namespace Restuarant_Site.Services
         }
         public void Update(Booking old, Booking newT)
         {
-            old.Description = newT.Description;
+            old.Location = newT.Location;
+            old.FirstName = newT.FirstName;
+            old.LastName = newT.LastName;
+            old.PhoneNumber = newT.PhoneNumber;
+            old.PartySize = newT.PartySize;
+            old.Notes = newT.Notes;
+            old.Info = newT.Info;
             old.Status = newT.Status;
             _todoRepository.Update(old);
             _todoRepository.Save();

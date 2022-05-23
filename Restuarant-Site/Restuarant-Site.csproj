@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tests\" />
+    <Folder Include="Public\Assets\Images\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 
 </Project>

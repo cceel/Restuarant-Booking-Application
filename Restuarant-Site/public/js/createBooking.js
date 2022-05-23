@@ -4,6 +4,50 @@
      * 1) send an update to the DB
      * 2) if successful then add the item to the list
      ****************************************************************************/
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    document.getElementById("submitButton").disabled = true;
+});
+
+function validateInputs() {
+    let values = [];
+
+    let locations = document.getElementById("locations");
+    let firstName = document.getElementById("fname");
+    let lastName = document.getElementById("lname");
+    let phoneNumber = document.getElementById("phonen");
+    let partySize = document.getElementById("party");
+    let notes = document.getElementById("notes");
+    let info = document.getElementById("info");
+
+
+    values.push(locations == null ? "" : locations.value.trim());
+    values.push(firstName == null ? "" : firstName.value.trim());
+    values.push(lastName == null ? "" : lastName.value.trim());
+    values.push(phoneNumber == null ? "" : phoneNumber.value.trim());
+    values.push(partySize == null ? "" : partySize.value.trim());
+    values.push(notes == null ? "" : notes.value.trim());
+    values.push(info == null ? "" : info.value.trim());
+
+    let valuesLength = values.length;
+    let count = 0;
+
+    console.log(valuesLength)
+
+    for (let i = 0; i < values.length; i++) {
+        if (values[i] !== "") {
+            count++;
+        }
+    }
+    console.log(count)
+
+    if (count === valuesLength) {
+        document.getElementById("submitButton").disabled = false;
+    } else {
+       document.getElementById("submitButton").disabled = true;
+    }
+}
+
 function addNewBooking() {
 
     // Get the value from the Input field in the FORM
@@ -18,6 +62,7 @@ function addNewBooking() {
     values.push(document.getElementById("info").value.trim());
 
     createBooking(values);
+
 }
 
 /****************************************************************************
@@ -33,10 +78,10 @@ function createBooking(values) {
     const newBooking =
         {
             "location": values[0],
-            "fname": values[1],
-            "lname": values[2],
-            "phonen": values[3],
-            "party": values[4],
+            "firstName": values[1],
+            "lastName": values[2],
+            "phoneNumber": values[3],
+            "partySize": values[4],
             "notes": values[5],
             "info": values[6],
             "status": "REQUESTED"
