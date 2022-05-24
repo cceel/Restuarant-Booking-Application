@@ -12,6 +12,8 @@ namespace Restuarant_Site.Models
         [MinLength(2, ErrorMessage = "Length of location cannot be less than 2 characters")]
         public string? Location { get; set; }
 
+        public string? BookingDateTime { get; set; }
+
         [Required(ErrorMessage = "firstName is required")]
         public string? FirstName { get; set; }
 

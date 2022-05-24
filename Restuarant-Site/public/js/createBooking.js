@@ -13,6 +13,7 @@ function validateInputs() {
     let values = [];
 
     let locations = document.getElementById("locations");
+    let dateTime = document.getElementById("booking-time")
     let firstName = document.getElementById("fname");
     let lastName = document.getElementById("lname");
     let phoneNumber = document.getElementById("phonen");
@@ -22,6 +23,7 @@ function validateInputs() {
 
 
     values.push(locations == null ? "" : locations.value.trim());
+    values.push(dateTime == null ? "" : dateTime.value.trim());
     values.push(firstName == null ? "" : firstName.value.trim());
     values.push(lastName == null ? "" : lastName.value.trim());
     values.push(phoneNumber == null ? "" : phoneNumber.value.trim());
@@ -29,19 +31,15 @@ function validateInputs() {
     values.push(notes == null ? "" : notes.value.trim());
     values.push(info == null ? "" : info.value.trim());
 
-    let valuesLength = values.length;
     let count = 0;
-
-    console.log(valuesLength)
 
     for (let i = 0; i < values.length; i++) {
         if (values[i] !== "") {
             count++;
         }
     }
-    console.log(count)
 
-    if (count === valuesLength) {
+    if (count === values.length) {
         document.getElementById("submitButton").disabled = false;
     } else {
        document.getElementById("submitButton").disabled = true;
@@ -54,6 +52,7 @@ function addNewBooking() {
     let values = [];
 
     values.push(document.getElementById("locations").value.trim());
+    values.push(document.getElementById("booking-time").value.trim());
     values.push(document.getElementById("fname").value.trim());
     values.push(document.getElementById("lname").value.trim());
     values.push(document.getElementById("phonen").value.trim());
@@ -78,12 +77,13 @@ function createBooking(values) {
     const newBooking =
         {
             "location": values[0],
-            "firstName": values[1],
-            "lastName": values[2],
-            "phoneNumber": values[3],
-            "partySize": values[4],
-            "notes": values[5],
-            "info": values[6],
+            "BookingDateTime": values[1],
+            "firstName": values[2],
+            "lastName": values[3],
+            "phoneNumber": values[4],
+            "partySize": values[5],
+            "notes": values[6],
+            "info": values[7],
             "status": "REQUESTED"
         };
     const requestOptions = {
@@ -95,8 +95,12 @@ function createBooking(values) {
         // get the JSON content from the response
         .then((response) => {
             if (!response.ok) {
-                alert("An error has occurred.  Unable to create the Booking item")
+                alert("An error has occurred.\nUnable to create the Booking.")
                 throw response.status;
-            } else return response.json();
+            } else {
+                alert("Success! Your booking has been created.");
+                document.getElementById("submitButton").disabled = true;
+                return response.json();
+            }
         })
 }

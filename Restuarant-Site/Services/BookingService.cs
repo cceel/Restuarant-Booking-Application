@@ -31,6 +31,7 @@ namespace Restuarant_Site.Services
         public void Update(Booking old, Booking newT)
         {
             old.Location = newT.Location;
+            old.BookingDateTime = newT.BookingDateTime;
             old.FirstName = newT.FirstName;
             old.LastName = newT.LastName;
             old.PhoneNumber = newT.PhoneNumber;
