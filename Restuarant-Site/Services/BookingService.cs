@@ -5,28 +5,28 @@ namespace Restuarant_Site.Services
 {
     public class BookingService : ICrudService<Booking, int>
     {
-        private readonly ICrudRepository<Booking, int> _todoRepository;
+        private readonly ICrudRepository<Booking, int> _bookingRepository;
         public BookingService(ICrudRepository<Booking, int> todoRepository)
         {
-            _todoRepository = todoRepository;
+            _bookingRepository = todoRepository;
         }
         public void Add(Booking element)
         {
-            _todoRepository.Add(element);
-            _todoRepository.Save();
+            _bookingRepository.Add(element);
+            _bookingRepository.Save();
         }
         public void Delete(int id)
         {
-            _todoRepository.Delete(id);
-            _todoRepository.Save();
+            _bookingRepository.Delete(id);
+            _bookingRepository.Save();
         }
         public Booking Get(int id)
         {
-            return _todoRepository.Get(id);
+            return _bookingRepository.Get(id);
         }
         public IEnumerable<Booking> GetAll()
         {
-            return _todoRepository.GetAll();
+            return _bookingRepository.GetAll();
         }
         public void Update(Booking old, Booking newT)
         {
@@ -39,8 +39,8 @@ namespace Restuarant_Site.Services
             old.Notes = newT.Notes;
             old.Info = newT.Info;
             old.Status = newT.Status;
-            _todoRepository.Update(old);
-            _todoRepository.Save();
+            _bookingRepository.Update(old);
+            _bookingRepository.Save();
         }
     }
 }

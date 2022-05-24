@@ -11,8 +11,21 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<BookingContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddScoped<ICrudRepository<Booking, int>, BookingRepository>();
 builder.Services.AddScoped<ICrudService<Booking, int>, BookingService>();
+
+builder.Services.AddDbContext<IngredientContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ICrudRepository<Ingredient, int>, IngredientRepository>();
+builder.Services.AddScoped<ICrudService<Ingredient, int>, IngredientService>();
+
+builder.Services.AddDbContext<ProductContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ICrudRepository<Product, int>, ProductRepository>();
+builder.Services.AddScoped<ICrudService<Product, int>, ProductService>();
 
 builder.Services.AddCors(options =>
 {
