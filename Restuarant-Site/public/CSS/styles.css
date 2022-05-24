@@ -143,3 +143,20 @@ ul {
     font-size: 1.6rem;
     text-shadow: 2px 2px black;
 }
+
+.row {
+    padding-bottom: 15px;
+}
+
+.bookingForm {
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+}
+
+#submitButton {
+    width: 100%;
+}

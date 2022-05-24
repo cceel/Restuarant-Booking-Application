@@ -33,75 +33,101 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Gusto d'italia!</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Book Table</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Delivery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Admin</a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="#">Gusto d'italia!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Book Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Delivery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admin</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
 
-      <!-- Header -->
-      <div class="Header">
-          <div class="Container-Header">
-              <img class="Container-Image" src="../Public/Assets/Images/spaghetti-meatballs.jpg" alt="Pasta Dish">
-              <div class="Centered-Text">Gusto d'italia!!</div>
-          </div>
-      </div>
+    <!-- Header -->
+    <div class="Header">
+        <div class="Container-Header">
+            <img class="Container-Image" src="../Public/Assets/Images/spaghetti-meatballs.jpg" alt="Pasta Dish">
+            <div class="Centered-Text">Gusto d'italia!!</div>
+        </div>
+    </div>
 
     <div class="bookingForm">
 
-        <h2>Book a table</h2>
+        <h2>Book a Table</h2>
+        <h2>Gusto d'italia! - London</h2>
+        <p>We look forward to welcoming you to Gusto d'italia!</p>
 
-        <form action="javascript:addNewBooking()" style="margin-top: 10px">
-
-            <label for="chooseLocation">Choose a location:</label><br>
-            <select name="locations" id="locations" oninput="validateInputs()">
-                <option value="terrace">Terrace</option>
-                <option value="balcony">Balcony</option>
-                <option value="indoor_table">Indoors (Table)</option>
-                <option value="indoor_booth">Indoors (Booth)</option>
-            </select><br><br>
-
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname" value="John" oninput="validateInputs()"><br><br>
-
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname" value="Doe" oninput="validateInputs()"><br><br>
-
-            <label for="phone">Phone Number:</label><br>
-            <input type="text" id="phonen" name="phonen" value="" oninput="validateInputs()"><br><br>
-
-            <label for="partynum">Number in party:</label><br>
-            <input type="number" id="party" name="party" value="1" oninput="validateInputs()"><br><br>
-
-            <label for="notes">Special notes:</label><br>
-            <input type="text" id="notes" name="notes" value="" oninput="validateInputs()"><br><br>
-
-            <label for="info">Allergy/Dietary Requirements:</label><br>
-            <input type="text" id="info" name="info" value="" oninput="validateInputs()"><br><br>
-
-            <input id="submitButton" type="submit" value="Submit">
-        </form>
-
+        <div class="formContainer">
+            <form action="javascript:addNewBooking()" style="margin-top: 10px">
+                <div class="row">
+                    <div class="col">
+                        <select name="locations" id="locations" class="form-control" oninput="validateInputs()">
+                            <option value="" disabled selected>Select Preferred Location</option>
+                            <option value="terrace">Terrace</option>
+                            <option value="balcony">Balcony</option>
+                            <option value="indoor_table">Indoors (Table)</option>
+                            <option value="indoor_booth">Indoors (Booth)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" id="fname" class="form-control" name="fname" placeholder="First Name"
+                            oninput="validateInputs()">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="lname" class="form-control" name="lname" placeholder="Last Name"
+                            oninput="validateInputs()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" id="phonen" class="form-control" name="phonen" placeholder="Phone Number"
+                            oninput="validateInputs()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" id="party" class="form-control" name="party" placeholder="Number in Party"
+                            oninput="validateInputs()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" id="notes" class="form-control" name="notes" placeholder="Special Notes"
+                            oninput="validateInputs()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" id="info" class="form-control" name="info"
+                            placeholder="Allergy/Dietary Requirements" oninput="validateInputs()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input id="submitButton" type="submit" value="BOOK NOW">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
 </body>
