@@ -17,7 +17,7 @@
         crossorigin="anonymous"></script>
 
     <!--Custom CSS-->
-    <script src="../Public/JS/createBooking.js"></script>
+    <script src="../Public/JS/crudBooking.js"></script>
     <link rel="stylesheet" href="../Public/CSS/styles.css">
 </head>
 
@@ -28,7 +28,7 @@
   from the DB
 ---------------------------------------------------------------------------------------->
 
-<body>
+<body onload="readTodoItems()">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -64,10 +64,31 @@
     <div class="Header">
         <div class="Container-Header">
             <img class="Container-Image" src="../Public/Assets/Images/spaghetti-meatballs.jpg" alt="Pasta Dish">
-            <div class="Centered-Text">Gusto d'italia!!</div>
+            <div class="Centered-Text">Gusto d'italia!</div>
         </div>
     </div>
-
-</body>
+    <h2>Bookings Placed</h2>
+    <table id="bookingList">
+        <tr>
+            <th>Date and Time</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Location</th>
+            <th>Party Size</th>
+            <th>Phone Number</th>
+            <th>Notes</th>
+            <th>Info</th>
+            <th>Status</th>
+            <th>Approve or Delete</th>
+        </tr>
+    </table>
+    <!--
+    <ul id="bookingList">
+         This list is empty at start and is populated by the readTodoItems() function
+             called by the onload trigger (see the body element above)
+         
+    </ul>
+-->
+</body> 
 
 </html>

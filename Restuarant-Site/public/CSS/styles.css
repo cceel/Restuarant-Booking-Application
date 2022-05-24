@@ -160,3 +160,15 @@ ul {
 #submitButton {
     width: 100%;
 }
+
+table {
+
+    text-align: center;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right:10vw;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(241, 241, 241);
+}
