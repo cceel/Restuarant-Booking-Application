@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
-    <title>Restuarant - Booking</title>
+    <title>Gusto d'italia! - Booking</title>
+
+    <!--Bootstrap Import-->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <!--Custom CSS-->
     <script src="../Public/JS/createBooking.js"></script>
+    <link rel="stylesheet" href="../Public/CSS/styles.css">
 </head>
 
 
@@ -14,11 +27,46 @@
   which will in turn send a REST API GET request to the microservice to read the booking_list
   from the DB
 ---------------------------------------------------------------------------------------->
+
 <body>
 
-    <!---------------------------------------------------------------------------------------
-      This is the Header
-    ---------------------------------------------------------------------------------------->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Gusto d'italia!</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Book Table</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Delivery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Admin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header -->
+      <div class="Header">
+          <div class="Container-Header">
+              <img class="Container-Image" src="../Public/Assets/Images/spaghetti-meatballs.jpg" alt="Pasta Dish">
+              <div class="Centered-Text">Gusto d'italia!!</div>
+          </div>
+      </div>
+
     <div class="bookingForm">
 
         <h2>Book a table</h2>
@@ -57,4 +105,5 @@
     </div>
 
 </body>
+
 </html>

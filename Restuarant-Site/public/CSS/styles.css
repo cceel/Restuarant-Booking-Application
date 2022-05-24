@@ -1,7 +1,10 @@
-﻿body {
+﻿@font-face{
+    font-family: "ShadowsIntoLight-Regular";
+    src: url("../Assets/Fonts/ShadowsIntoLight-Regular.ttf") format("truetype");
+  }
+body {
     margin: 0;
-    min-width: 720px;
-    font-family: sans-serif;
+    font-family: 'ShadowsIntoLight-Regular', Fallback, sans-serif;
 }
 
 /* Include the padding and border in an element's total width and height */
@@ -110,3 +113,33 @@ ul {
         background-color: red;
         color: white;
     }
+
+/* CSS for Header
+
+/* Container holding the image and the text */
+
+.Container-Header {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+
+  .Container-Image {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+  /* Centered text */
+  .Centered-Text {
+    position: relative;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    text-shadow: 2px 2px black;
+}
