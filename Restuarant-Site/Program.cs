@@ -9,23 +9,34 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Booking Service
 builder.Services.AddDbContext<BookingContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<ICrudRepository<Booking, int>, BookingRepository>();
 builder.Services.AddScoped<ICrudService<Booking, int>, BookingService>();
 
+// Ingredient Service
 builder.Services.AddDbContext<IngredientContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<ICrudRepository<Ingredient, int>, IngredientRepository>();
 builder.Services.AddScoped<ICrudService<Ingredient, int>, IngredientService>();
 
+// Product Service
 builder.Services.AddDbContext<ProductContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<ICrudRepository<Product, int>, ProductRepository>();
 builder.Services.AddScoped<ICrudService<Product, int>, ProductService>();
+
+// Coupon Service
+builder.Services.AddDbContext<CouponContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ICrudRepository<Coupon, int>, CouponRepository>();
+builder.Services.AddScoped<ICrudService<Coupon, int>, CouponService>();
 
 builder.Services.AddCors(options =>
 {
